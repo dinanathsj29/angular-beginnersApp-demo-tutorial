@@ -1,0 +1,153 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h3>Welcome to {{ title }}!</h3>
+</div>
+
+<app-header></app-header>
+
+<div class="forms-container">
+  <router-outlet></router-outlet>
+</div>
+
+<hr />
+
+<div>
+  <h3>Property Binding </h3>
+  <h5>property binding = [ ] source/controller/js to view , event binding = ( ) view to controller</h5>
+  <input type="text" value="Normal property" disabled />
+  <input type="text" value="property binding" [disabled]="isDisabledFalse" />
+  <input type="text" value="property binding" [disabled]=isDisabledTrue />
+</div>
+
+<hr />
+
+<div>
+  <h3>Two way data binding </h3>
+  <h5>"[(" ng Model ")]", must import FormsModule, import FormsModule from '@angular/forms' </h5>
+  <input type="text" [(ngModel)]="firstName" /> You Entered : {{firstName}}
+</div>
+
+<hr />
+
+<div>
+  <h3>*ngFor directive</h3>
+  <h5>loop over / iterate array/object - create list</h5>
+
+  <table border="1" cellspacing="2" cellpadding="5">
+    <tr>
+      <td>Sr.</td>
+      <td>Name</td>
+      <td>Online</td>
+      <td>odd / even </td>
+    </tr>
+    <tr *ngFor="let record of empRecords; let sr=index; let odds=odd; let evens=even"
+      [ngClass]="{oddClass:odds, evenClass:evens}">
+      <td>{{sr}}. </td>
+      <td>{{record.name}}</td>
+      <td>{{record.isOnline}}</td>
+      <td>{{odds}} / {{evens}}</td>
+    </tr>
+  </table>
+</div>
+
+<hr />
+
+<div>
+  <h3>Service</h3>
+  <h5>Create commonly used utilities as a service, import to app.module.ts and add in providers array</h5>
+
+  <table border="1" cellspacing="2" cellpadding="5">
+    <tr>
+      <td>Sr.</td>
+      <td>Name</td>
+      <td>Online</td>
+      <td>odd / even </td>
+    </tr>
+
+    <tr
+      *ngFor="let record of empRecords1; let sr=index; let firstRecord=first; let lastRecord=last; let oddRecord=odd; let evenRecord=even"
+      [ngClass]="{oddClass:oddRecord, evenClass:evenRecord}">
+      <td>{{sr}}. </td>
+      <td>{{record.name}}</td>
+      <td>{{record.isOnline}}</td>
+      <td>{{oddRecord}} / {{evenRecord}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<hr />
+
+<div>
+  <h3>Http - (Working with JSON data -> Service -> Interface -> subscribe)</h3>
+  <h5>1. import httpClientModule from @angular/common/http 2. in service file import HttpClient from
+    @angular/common/http 3. get method call url with observable 4. subscribe in respective file 5. bind in view</h5>
+
+  <table border="1" cellspacing="2" cellpadding="5">
+    <tr>
+      <td>Sr.</td>
+      <td>Name</td>
+      <td>Online</td>
+      <td>odd / even </td>
+    </tr>
+
+    <tr
+      *ngFor="let record of empRecords2; let sr=index; let firstRecord=first; let lastRecord=last; let oddRecord=odd; let evenRecord=even"
+      [ngClass]="{oddClass:oddRecord, evenClass:evenRecord}">
+      <td>{{sr}}. </td>
+      <td>{{record.name}}</td>
+      <td>{{record.isOnline}}</td>
+      <td>{{oddRecord}} / {{evenRecord}}</td>
+    </tr>
+  </table>
+</div>
+
+<hr />
+
+<div>
+  <ul *ngFor="let countryRecord of countryRecords1">
+    <li>
+      {{countryRecord.name}} {{countryRecord.code}} {{countryRecord.acronym}}
+    </li>
+  </ul>
+
+  <hr />
+
+  <h3>Http - (Working with JSON data -> Service -> Interface -> subscribe)</h3>
+  <ul *ngFor="let countryRecord of countryRecords2">
+    <li>
+      {{countryRecord.name}} {{countryRecord.code}} {{countryRecord.acronym}}
+    </li>
+  </ul>
+</div>
+
+<hr />
+
+<div>
+  <h3>*ngIf</h3>
+  <h5>Conditional markup show/hide</h5>
+  <li *ngIf="isShow; else falseTemplate">Condition based visibility with *ngIf</li>
+
+  <ng-template #falseTemplate>This is falseTemplate </ng-template>
+</div>
+
+<hr />
+
+<div>
+  <h3>ngNonBindable</h3>
+  <h5>ngNonBindable is used to show/display angulars expression / interpolation symbol on the screen like html text
+    entity based special character displayed on the screen.</h5>
+  <li ngNonBindable>{{curley brace is used for expression / interpolation}}</li>
+</div>
+
+<hr />
+
+<div>
+  <h3>ngClass</h3>
+  <h5>[ngClass] is used to display css classes as per conditions</h5>
+  <li [ngClass]="{active:isShow, nonActive:!isShow}">This is [ngClass] with multiple css
+    classes</li>
+</div>
+
+<hr />

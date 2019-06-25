@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Akshay2",
+        "isOnline": true
+    },
+    {
+        "name": "Sunny2",
+        "isOnline": true
+    },
+    {
+        "name": "Ranbir2",
+        "isOnline": false
+    },
+    {
+        "name": "Amitabh2",
+        "isOnline": true
+    },
+    {
+        "name": "Rajesh2",
+        "isOnline": false
+    }
+]

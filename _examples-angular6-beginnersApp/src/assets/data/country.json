@@ -1,0 +1,27 @@
+[
+    {
+        "name": "India",
+        "code": 91,
+        "acronym": "IN"
+    },
+    {
+        "name": "Nepal",
+        "code": 11,
+        "acronym": "NP"
+    },
+    {
+        "name": "Srilanka",
+        "code": 12,
+        "acronym": "SL"
+    },
+    {
+        "name": "Bangladesh",
+        "code": 13,
+        "acronym": "BD"
+    },
+    {
+        "name": "Burma",
+        "code": 14,
+        "acronym": "BR"
+    }
+]
